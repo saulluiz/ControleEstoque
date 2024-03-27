@@ -1,0 +1,18 @@
+@if (TempData.ContainsKey("mensagem"))
+{
+    var mensagem = MensagemModel.Deserializar(TempData["mensagem"].ToString());
+    @if (mensagem.Tipo == TipoMensagem.Erro)
+    {
+        <div class="" role="alert">
+            @mensagem.Texto
+            <button type="button" class="" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    else
+    {
+        <div class="" role="alert">
+            @mensagem.Texto
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+}
