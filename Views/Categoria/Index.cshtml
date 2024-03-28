@@ -35,7 +35,9 @@
                 <tr class="">
                     <td class=" font-bold h-[40px] w-[450px]">@categoria.Nome </td>
                     <td class="flex justify-around w-[150px]">
-                     <a class="    @buttonStyle("blue-400","indigo")" asp-action="Cadastrar" asp-route-id="@categoria.IdCategoria" class="">Alterar</a>
+                     <a class="    @buttonStyle("blue-400","indigo")" asp-action="Cadastrar" asp-route-id="@categoria.IdCategoria" 
+                     class="">Alterar</a>
+                      
                      <a class=" @buttonStyle("red-400","indigo")" asp-action="Excluir" asp-route-id="@categoria.IdCategoria" class="">Excluir</a>
                     
                     </td>

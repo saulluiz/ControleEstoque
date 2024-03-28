@@ -387,3 +387,4 @@ C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\ControleEstoque\bin\Debug\
 C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\ControleEstoque\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\ControleEstoque\obj\Debug\net5.0\Razor\Views\Categoria\Index.cshtml.g.cs
 C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\ControleEstoque\bin\Debug\net5.0\estoque.db
+C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\ControleEstoque\obj\Debug\net5.0\Razor\Views\Categoria\Cadastrar.cshtml.g.cs
