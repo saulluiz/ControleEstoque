@@ -4,7 +4,14 @@
         ViewBag.Subtitulo = "Alteração de Categoria";
         else
         ViewBag.Subtitulo = "Cadastro de Categoria";
+
+        static string buttonStyle(string primary,string secondary){
+       return $"bg-{primary} hover:bg-{secondary}-100 text-black font-semibold py-1 px-4 my-auto border border-{secondary}-400 rounded shadow text-center text-xs";
+  
+  }
  }
+ <div class=" w-[70%] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mx-auto p-[30px] my-[20px] text-justify ">
+
  <h1>@ViewBag.Subtitulo</h1>
  <hr>
  <form asp-action="Cadastrar">
@@ -15,7 +22,8 @@
         <span asp-validation-for="@Model.Nome" class=""></span>
     </div>
     <div class="">
-        <a asp-action="Index" >Cancelar</a>
-        <button type="submit">Salvar</button>
+        <a class="@buttonStyle("red-400","red")" asp-action="Index" >Cancelar</a>
+        <button class="@buttonStyle("green-400","green")"type="submit">Salvar</button>
     </div>
  </form>
+ </div>

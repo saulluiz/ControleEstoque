@@ -1,9 +1,14 @@
 @model CategoriaModel
 @{
     ViewBag.Subtitulo = "Exclusão de Categoria";
+    static string buttonStyle(string primary,string secondary){
+       return $"bg-{primary} hover:bg-{secondary}-100 text-black font-semibold py-1 px-4 my-auto border border-{secondary}-400 rounded shadow text-center text-xs";
+  
 }
+}
+<div class=" w-[70%] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] mx-auto p-[30px] my-[20px] text-justify ">
 
-<h1 class="">@ViewBag.Subtitulo</h1>
+<h1 class="text-bold font-mono">@ViewBag.Subtitulo</h1>
 <hr>
 <h4>
 
@@ -12,7 +17,8 @@
 <form asp-action="Excluir">
     <input type="hidden" asp-for="@Model.IdCategoria">
     <div class="mt-3">
-        <a asp-action="Index" >Não</a>
-        <button type="submit">Sim</button>
+        <a  class="@buttonStyle("blue-400","blue")" asp-action="Index" >Não</a>
+        <button class="@buttonStyle("red-400","red")" type="submit">Sim</button>
     </div>
 </form>
+</div>
