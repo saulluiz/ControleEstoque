@@ -1,0 +1,18 @@
+@model CategoriaModel
+@{
+    ViewBag.Subtitulo = "Exclusão de Categoria";
+}
+
+<h1 class="">@ViewBag.Subtitulo</h1>
+<hr>
+<h4>
+
+    deseja realmente excluir a categoria <span>@Model.Nome ?</span>
+</h4>
+<form asp-action="Excluir">
+    <input type="hidden" asp-for="@Model.IdCategoria">
+    <div class="mt-3">
+        <a asp-action="Index" >Não</a>
+        <button type="submit">Sim</button>
+    </div>
+</form>

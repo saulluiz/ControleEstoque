@@ -1,0 +1,42 @@
+ @model ProdutoModel
+ @{
+    if(Context.Request.RouteValues.ContainsKey("id"))
+        ViewBag.Subtitulo = "Alteração de Produto";
+        else
+        ViewBag.Subtitulo = "Cadastro de Produto";
+ }
+ <h1>@ViewBag.Subtitulo</h1>
+ <hr>
+ <form asp-action="Cadastrar">
+    <input type="hidden" asp-for="@Model.IdProduto">
+    <div class="">
+        <label asp-for="@Model.Nome">Nome:</label>
+        <input asp-for="@Model.Nome" class="" autofocus>
+        <span asp-validation-for="@Model.Nome" class=""></span>
+    </div>
+    <div class="w-[100%]"></div>
+    <div class="">
+        <label asp-for="@Model.IdCategoria">Categoria:</label>
+        <select asp-for="@Model.IdCategoria"asp-items="@(IEnumerable<SelectListItem>)ViewBag.Categorias" class="" ></select>
+        <span asp-validation-for="@Model.IdCategoria" class=""></span>
+    </div>
+        <div class="w-[100%]"></div>
+        <div class="">
+        <label asp-for="@Model.Estoque">Estoque:</label>
+        <input asp-for="@Model.Estoque" class="" >
+        <span asp-validation-for="@Model.Estoque" class=""></span>
+    </div>
+    <div class="">
+        <label asp-for="@Model.Preco">Preco:</label>
+        <input asp-for="@Model.Preco" class="" autofocus>
+        <span asp-validation-for="@Model.Preco" class=""></span>
+    </div>
+
+        
+        
+
+    <div class="">
+        <a asp-action="Index" >Cancelar</a>
+        <button type="submit">Salvar</button>
+    </div>
+ </form>

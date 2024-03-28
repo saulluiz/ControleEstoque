@@ -1,3 +1,4 @@
+using ControleEstoque.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControleEstoque
@@ -5,6 +6,7 @@ namespace ControleEstoque
     public class EstoqueWebContext : DbContext
     {
         public DbSet<CategoriaModel> Categorias { get; set; }
+        public DbSet<ProdutoModel> Produtos { get; set; }
 
         public EstoqueWebContext(DbContextOptions<EstoqueWebContext> options) : base(options)
         {
@@ -13,6 +15,7 @@ namespace ControleEstoque
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CategoriaModel>().ToTable("Categoria");
+            modelBuilder.Entity<ProdutoModel>().ToTable("Produto");
         }
 
     }

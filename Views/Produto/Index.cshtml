@@ -1,0 +1,58 @@
+@model IEnumerable<ProdutoModel>
+
+@{
+    ViewBag.Subtitulo = "Listagem de Produtos";
+    static string buttonStyle(string primary,string secondary){
+       return $"bg-{primary} hover:bg-{secondary}-100 text-black font-semibold py-1 px-4 my-auto border border-{secondary}-400 rounded shadow text-center text-xs";
+  
+  }
+
+}
+
+<header class="">
+    <div>
+        <h1 class="">@ViewBag.Subtitulo</h1>
+    </div>
+    <div>
+        <a asp-action="Cadastrar" class="">Nova Produto</a>
+    </div>
+</header>
+<hr>
+<partial name="_Mensagem"></partial>
+@if (Model.Count() > 0)
+{
+    <table class="mx-auto shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] tabela-categorias w-[600px] bg-indigo-100  p-[40px]">
+        <thead class="bg-indigo-200 w-[600px]">
+            <tr class="w-[500px]">
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Estoque</th>
+                <th>Preco</th>
+                <th >Ações</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr class="">
+                    <td class=" font-bold h-[40px] w-[450px]">@produto.Nome </td>
+                    <td class=" font-bold h-[40px] w-[450px]">@produto.Categoria.Nome </td>
+                    <td class=" font-bold h-[40px] w-[450px]">@produto.Estoque.ToString("D4") </td>
+                    <td class=" font-bold h-[40px] w-[450px]">@produto.Preco.ToString("C") </td>
+                    
+                    <td class="flex justify-around w-[150px]">
+                     <a class="    @buttonStyle("blue-400","indigo")" asp-action="Cadastrar" asp-route-id="@produto.IdProduto" 
+                     class="">Alterar</a>
+                      
+                     <a class=" @buttonStyle("red-400","indigo")" asp-action="Excluir" asp-route-id="@produto.IdProduto" class="">Excluir</a>
+                    
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else{
+    <p>Não existem produtos cadastrados!</p>
+}
